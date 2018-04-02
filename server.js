@@ -9,7 +9,7 @@ var app = express();
 
 var router = express.Router();
 
-require("./routes/routes")(router);
+require("./routes/routers")(router);
 
 app.use(express.static(__dirname + "/public"));
 
