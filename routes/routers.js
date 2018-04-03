@@ -5,7 +5,7 @@ var notesController = require('../controllers/note');
 var request = require('request');
 var mongojs = require("mongojs");
 var databaseUrl = "scraper";
-var collections = ["scrapedData"];
+var collections = ["scrapedDatas"];
 var db = mongojs(databaseUrl, collections);
 
 module.exports = function(router) {
@@ -76,7 +76,7 @@ module.exports = function(router) {
     })
 
     router.get("/all", function(req,res){
-      db.scrapedData.find({}, function(error,found){
+      db.scrapedDatas.find({}, function(error,found){
         if (error) {
           console.log(error)
         } else {

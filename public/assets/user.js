@@ -10,6 +10,7 @@ $(document).ready(function () {
     }
 
     function refreshPage() {
+      $("#articles").empty();
       $.getJSON("/all", function(data) {
         // For each one
         for (var i = 0; i < data.length; i++) {
@@ -20,20 +21,6 @@ $(document).ready(function () {
     };
 
   })
-
-    // Grab the articles as a json
-
-    //         $.get('/api/headlines?saved=false')
-    //             .then(function (data) {
-    //                 if (data && data.length) {
-    //                     renderArticles(data);
-    //                 }
-    //                 else {
-    //                     renderEmpty();
-    //                 }
-    //             });
-    //     }
-
 
 //     function renderArticles(articles) {
 //         var articlePanels = [];
