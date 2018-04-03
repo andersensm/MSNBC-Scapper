@@ -1,1 +1,1 @@
-# NewYorkTimes-Scapper
+# MSNBC-Scapper
