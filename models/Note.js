@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
-
+var db = require("../config/connection");
 var Schema = mongoose.Schema;
 
 var NoteSchema = new Schema({
-  title: String,
-  body: String
+  noteText: {
+    type: String
+  }
 });
 
 var Note = mongoose.model("Note", NoteSchema);

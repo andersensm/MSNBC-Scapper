@@ -1,19 +1,22 @@
 var mongoose = require("mongoose");
+var db = require("../config/connection");
 var Schema = mongoose.Schema;
 
 var headLineSchema = new Schema({
-  headLine: {
+  title: {
+    type: String,
+    required: true,
+    unique: true,
+    dropDups: true
+  },
+  link: {
     type: String,
     required: true,
     unique: true
   },
-  summary: {
-    type: String,
-    required: true
-  },
-  saved: {
-    type: Boolean,
-    default: false
+  note: {
+    type: Schema.Types.ObjectId,
+    ref: "Note"
   }
 });
 var HeadLine = mongoose.model("Headline", headLineSchema);
